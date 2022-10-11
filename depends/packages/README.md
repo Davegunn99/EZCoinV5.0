@@ -1,0 +1,2 @@
+# EZCoin PoW + PoS
+
