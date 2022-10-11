@@ -640,16 +640,17 @@ void RPCConsole::clear(bool clearHistory)
         QString(
                 "table { }"
                 "td.time { color: #808080; font-size: %2; padding-top: 3px; } "
-                "td.message { font-family: %1; font-size: %2; white-space:pre-wrap; } "
-                "td.cmd-request { color: #006060; } "
-                "td.cmd-error { color: red; } "
-                "b { color: #006060; } "
+                "td.message { color: #57452C; font-weight: bold; font-family: calibri; font-size: 14px; white-space:pre-wrap; } "
+                "td.cmd-request { color: #898989; font-family: calibri; font-size: 12px; } "
+                "td.cmd-error { color: #BA683B; } "
+                ".secwarning { color: #BA683B; }"
+                "b { color: #D6A300; font-family: calibri; font-size: 11px;} "
             ).arg(fixedFontInfo.family(), QString("%1pt").arg(consoleFontSize))
         );
 
-    message(CMD_REPLY, (tr("Welcome to the %1 RPC console.").arg(tr(PACKAGE_NAME)) + "<br>" +
-                        tr("Use up and down arrows to navigate history, and <b>Ctrl-L</b> to clear screen.") + "<br>" +
-                        tr("Type <b>help</b> for an overview of available commands.")), true);
+    message(CMD_REPLY, (tr("<b>Ctrl-L</b>: clear screen.") + "<br>" +
+                        tr("<b>help</b>: available commands.")),
+                        true);
 }
 
 void RPCConsole::keyPressEvent(QKeyEvent *event)

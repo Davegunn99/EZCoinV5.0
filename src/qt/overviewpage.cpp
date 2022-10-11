@@ -108,8 +108,8 @@ public:
 };
 #include "overviewpage.moc"
 
-OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) :
-    QWidget(parent),
+OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QLabel *parent) :
+    QLabel(parent),
     ui(new Ui::OverviewPage),
     clientModel(0),
     walletModel(0),

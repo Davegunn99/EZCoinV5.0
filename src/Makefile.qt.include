@@ -290,6 +290,10 @@ RES_ICONS = \
   qt/res/icons/tx_mined.png \
   qt/res/icons/warning.png \
   qt/res/icons/verify.png \
+  qt/res/icons/modal_background.png \
+  qt/res/icons/overview_background.png \
+  qt/res/icons/sendcoin_background.png \
+  qt/res/icons/splashscreen_transparent.png \
   qt/res/icons/transaction_abandoned.png
 
 BITCOIN_QT_BASE_CPP = \

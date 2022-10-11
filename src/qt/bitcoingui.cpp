@@ -230,11 +230,7 @@ BitcoinGUI::BitcoinGUI(const Config *cfg, const PlatformStyle *platformStyle, co
     // Override style sheet for progress bar for styles that have a segmented progress bar,
     // as they make the text unreadable (workaround for issue #1071)
     // See https://doc.qt.io/qt-5/gallery.html
-    QString curStyle = QApplication::style()->metaObject()->className();
-    if(curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle")
-    {
-        progressBar->setStyleSheet("QProgressBar { background-color: #e8e8e8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #FF8000, stop: 1 orange); border-radius: 7px; margin: 0px; }");
-    }
+        progressBar->setStyleSheet("QProgressBar { background-color: #474747; font-family: Calibri, sans-recif; font-weight: normal; max-height: 10px; color: #F6F6F6; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, x3: 0, y3: 0, x4: 1, y4: 0, stop: 0 #474747, stop: 1 #BF910E, stop: 2 #BF910E, stop: 3 #BF910E); border-radius: 7px; margin: 0px; max-height: 10px;  }");
 
     statusBar()->addWidget(progressBarLabel);
     statusBar()->addWidget(progressBar);

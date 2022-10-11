@@ -8,6 +8,7 @@
 #include "walletmodel.h"
 
 #include <QDialog>
+#include <QWidget>
 #include <QMessageBox>
 #include <QString>
 #include <QTimer>
