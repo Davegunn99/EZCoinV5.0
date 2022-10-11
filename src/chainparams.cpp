@@ -122,7 +122,7 @@ public:
         consensus.nStakeMinAge = 6 * 60 * 60; // 6 hours
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100001");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000006308978d608c1582");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -142,8 +142,10 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x000001d199e24ba5817efc7ea06afd139baa514ce5af8e277e81c9bcf23b6ee6"));
         assert(genesis.hashMerkleRoot == uint256S("0xd51debba843438cfaaa8be7d949db8ef56eecfc18d514902c948ee1207e8ded2"));
 
-        vSeeds.push_back(CDNSSeedData("45.76.79.39", "45.76.79.39"));
-        vSeeds.push_back(CDNSSeedData("45.32.159.63", "45.32.159.63"));
+        vSeeds.push_back(CDNSSeedData("seed1", "seed1.myezcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed2", "seed2.myezcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed3", "seed3.myezcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed4", "seed4.myezcoin.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,34);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,33);
@@ -162,11 +164,17 @@ public:
 
         checkpointData = (CCheckpointData) {
                     boost::assign::map_list_of
-                    (0, uint256S("0x000001d199e24ba5817efc7ea06afd139baa514ce5af8e277e81c9bcf23b6ee6")),
-                    1664838737, // * UNIX timestamp of last checkpoint block
-                    0,    // * total number of transactions between genesis and last checkpoint
+                    (0, uint256S("0x000001d199e24ba5817efc7ea06afd139baa514ce5af8e277e81c9bcf23b6ee6"))
+                    (1, uint256S("0x150eae928474242450c661599063d4a4dcb06ba1fbdbf303fb32eba35aed88a3"))
+                    (16, uint256S("0x435590ae17b12ea7ad35d41631039b4ac3916261b59b6f35dca52bac22d4e436"))
+                    (197, uint256S("0x38f5487668b61e09a7c7dce01490c84484830929c44bebba6ee1537f39cc9ef5"))
+                    (1928, uint256S("0x3d2c83800d66e1ff917536f05e18d60011649904d914e2a7a41cf77872c37c91"))
+                    (11800, uint256S("0x763c3f2aae25e16159af9e1a0932475edbed6ce66cf75f56ec634174365dbfc0")),
+
+                    1665447060, // * UNIX timestamp of last checkpoint block
+                    17173,    // * total number of transactions between genesis and last checkpoint
                                 //   (the tx=... number in the SetBestChain debug.log lines)
-                    0      // * estimated number of transactions per day after checkpoint
+                    1.000000      // * estimated number of transactions per day after checkpoint
         };
     }
 };
