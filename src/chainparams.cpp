@@ -142,10 +142,10 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x000001d199e24ba5817efc7ea06afd139baa514ce5af8e277e81c9bcf23b6ee6"));
         assert(genesis.hashMerkleRoot == uint256S("0xd51debba843438cfaaa8be7d949db8ef56eecfc18d514902c948ee1207e8ded2"));
 
-        vSeeds.push_back(CDNSSeedData("seed1", "seed1.myezcoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed2", "seed2.myezcoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed3", "seed3.myezcoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed4", "seed4.myezcoin.com"));
+        vSeeds.emplace_back("seed1.myezcoin.com", true);
+        vSeeds.emplace_back("seed2.myezcoin.com", true);
+        vSeeds.emplace_back("seed3.myezcoin.com", true);
+        vSeeds.emplace_back("seed4.myezcoin.com", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,34);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,33);
