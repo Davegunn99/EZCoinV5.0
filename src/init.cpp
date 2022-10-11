@@ -500,7 +500,7 @@ std::string LicenseInfo()
            "\n" +
            FormatParagraph(strprintf("Copyright (C) %i-%i The Blackcoin More Developers", 2018, COPYRIGHT_YEAR)) + "\n" +
            "\n" +
-           FormatParagraph(strprintf("Copyright (C) %i The EZCoin Developers", 2022)) + "\n" +
+           FormatParagraph(strprintf("Copyright (C) %i The EZCoin Developers + TylerAnderson T.A", 2022)) + "\n" +
            "\n" +
            FormatParagraph(strprintf(_("Please contribute if you find EZCoin useful. "
                        "Visit %s for further information about the software."),
@@ -1075,10 +1075,10 @@ bool AppInit2(Config& config, boost::thread_group& threadGroup, CScheduler& sche
         OpenDebugLog();
 
     if (!fLogTimestamps)
-        LogPrintf("Startup time: %s\n", DateTimeStrFormat("%Y-%m-%d %H:%M:%S", GetTime()));
+    LogPrintf("Startup time: %s\n", DateTimeStrFormat("%Y-%m-%d %H:%M:%S", GetTime()));
     LogPrintf("Default data directory %s\n", GetDefaultDataDir().string());
     LogPrintf("Using data directory %s\n", strDataDir);
-    LogPrintf("Using config file %s\n", GetConfigFile().string());
+    LogPrintf("Using config file %s\n", GetConfigFile(GetArg("-conf", BITCOIN_CONF_FILENAME)).string());
     LogPrintf("Using at most %i connections (%i file descriptors available)\n", nMaxConnections, nFD);
     std::ostringstream strErrors;
 
