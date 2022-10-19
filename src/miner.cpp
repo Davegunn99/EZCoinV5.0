@@ -14,7 +14,7 @@
 #include "consensus/validation.h"
 #include "crypto/scrypt.h"
 #include "hash.h"
-#include "main.h"
+#include "validation.h"
 #include "net.h"
 #include "policy/policy.h"
 #include "pos.h"
@@ -75,22 +75,6 @@ int64_t UpdateTime(CBlock* pblock, const Consensus::Params& consensusParams, con
         pblock->nBits =  GetNextTargetRequired(pindexPrev, pblock, consensusParams, pblock->IsProofOfStake());
 
     return nNewTime - nOldTime;
-}
-
-// miner's coin base reward (POW)
-CAmount GetProofOfWorkReward()
-{
-    CAmount nSubsidy;
-    int nBlockHeight = chainActive.Height() + 1;
-
-    if (nBlockHeight == 1) {
-      CAmount nSubsidy = 133000000 * COIN;
-    }
-    if (nBlockHeight != 1) {
-      CAmount nSubsidy = 100 * COIN;
-    }
-
-    return nSubsidy;
 }
 
 int64_t GetMaxTransactionTime(CBlock* pblock)
@@ -174,7 +158,7 @@ CBlockTemplate* BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn, in
     }
     else {
         coinbaseTx.vout[0].scriptPubKey = scriptPubKeyIn;
-        coinbaseTx.vout[0].nValue = nFees + GetProofOfWorkSubsidy();
+        coinbaseTx.vout[0].nValue = nFees + GetProofOfWorkSubsidy(nHeight, chainparams.GetConsensus());
     }
     coinbaseTx.vin[0].scriptSig = CScript() << nHeight << OP_0;
     pblock->vtx[0] = coinbaseTx;
