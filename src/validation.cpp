@@ -1790,6 +1790,8 @@ CAmount GetProofOfWorkSubsidy(int nBlockHeight, const Consensus::Params& consens
         nSubsidy = 1 * COIN;
     } else if (nBlockHeight >= 662941400) {
         nSubsidy = 0 * COIN;
+    } else {
+        nSubsidy = 0;
     }
     return nSubsidy;
 }
@@ -1804,8 +1806,9 @@ CAmount GetProofOfStakeSubsidy()
         return 1 * COIN;
     } else if (nBlockHeight >= 662941400) {
         return 0 * COIN;
+    } else {
+        return 0;
     }
-
 }
 
 bool IsInitialBlockDownload()
