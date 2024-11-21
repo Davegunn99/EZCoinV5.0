@@ -1784,9 +1784,12 @@ CAmount GetProofOfWorkSubsidy(int nBlockHeight, const Consensus::Params& consens
 
     if (nBlockHeight == 1) {
         nSubsidy = 133000000 * COIN;
-    } else if (nBlockHeight <= 8670001) {
+    } else if (nBlockHeight > 1 && nBlockHeight < 2061200) {
         nSubsidy = 100 * COIN;
-    } else if (nBlockHeight > 8670001) {
+    } else if (nBlockHeight > 2061199 && nBlockHeight < 662941400) {
+        nSubsidy = 1 * COIN;
+
+    } else if (nBlockHeight >= 662941400) {
         nSubsidy = 0 * COIN;
     }
     return nSubsidy;
