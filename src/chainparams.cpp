@@ -122,7 +122,7 @@ public:
         consensus.nStakeMinAge = 6 * 60 * 60; // 6 hours
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000412dccc5545a51e30");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000005798c8adb08535d2ef0");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -170,10 +170,13 @@ public:
                     (197, uint256S("0x38f5487668b61e09a7c7dce01490c84484830929c44bebba6ee1537f39cc9ef5"))
                     (1928, uint256S("0x3d2c83800d66e1ff917536f05e18d60011649904d914e2a7a41cf77872c37c91"))
                     (11800, uint256S("0x763c3f2aae25e16159af9e1a0932475edbed6ce66cf75f56ec634174365dbfc0"))
-                    (35042, uint256S("0xbedbc483ae054c66d48b06c049fe092d9b14bbbaf57ffbce7250a1b732071da0")),
+                    (35042, uint256S("0xbedbc483ae054c66d48b06c049fe092d9b14bbbaf57ffbce7250a1b732071da0"))
+                    (630861, uint256S("0xcc488f1d212686d3cef1dab9245153743088fdd4d6d536cfbda69bfdd05bc555"))
+                    (1853833, uint256S("0xd80a4486f4583f5abde76f713222b0bcc59c59dbc1b4049060af0f6228897d22"))
+                    (2045550, uint256S("0xe014e6ed16fe8c071771b7af972f18a1125f0e5a7c234ed9318340d937399beb")),
 
-                    1666208272, // * UNIX timestamp of last checkpoint block
-                    53780,    // * total number of transactions between genesis and last checkpoint
+                    1732163920, // * UNIX timestamp of last checkpoint block
+                    3139969,    // * total number of transactions between genesis and last checkpoint
                                 //   (the tx=... number in the SetBestChain debug.log lines)
                     1.000000      // * estimated number of transactions per day after checkpoint
         };
