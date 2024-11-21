@@ -1788,7 +1788,6 @@ CAmount GetProofOfWorkSubsidy(int nBlockHeight, const Consensus::Params& consens
         nSubsidy = 100 * COIN;
     } else if (nBlockHeight > 2061199 && nBlockHeight < 662941400) {
         nSubsidy = 1 * COIN;
-
     } else if (nBlockHeight >= 662941400) {
         nSubsidy = 0 * COIN;
     }
@@ -1799,11 +1798,14 @@ CAmount GetProofOfStakeSubsidy()
 {
     int nBlockHeight = chainActive.Height() + 1;
 
-    if (nBlockHeight <= 8670001) {
+    if (nBlockHeight > 1 && nBlockHeight < 2061200) {
         return 100 * COIN;
-    } else if (nBlockHeight > 8670001) {
+    } else if (nBlockHeight > 2061199 && nBlockHeight < 662941400) {
+        return 1 * COIN;
+    } else if (nBlockHeight >= 662941400) {
         return 0 * COIN;
     }
+
 }
 
 bool IsInitialBlockDownload()
